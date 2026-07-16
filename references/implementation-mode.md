@@ -17,6 +17,13 @@ Announce: `**MODE: IMPLEMENTATION** (4 of 5) — role: Senior Implementation Eng
 Go-with-changes that are now folded into the design). If either is missing —
 **stop and ask**; do not build on an unreviewed or rejected design.
 
+**Verify git state first.** Before writing code, confirm you're on a feature
+branch (not `main`/`master`) and know the working-tree state. If on the default
+branch, stop and ask the user to create or switch to a feature branch. If the
+tree has unrelated uncommitted changes, ask whether to stash, commit, or proceed.
+A fresh branch off a stale base invites integration surprises — rebase onto the
+latest default branch before starting if it hasn't diverged.
+
 ---
 
 ## START
@@ -35,7 +42,9 @@ behavior first, then implement to pass it. State what you will test and why.
 
 Implement component by component. Keep diffs small and reviewable. Match the
 surrounding code's conventions, naming, and idioms — the change should read like
-the code around it.
+the code around it. Commit after each logically complete increment rather than
+one giant commit at the end — stage specific files (never `git add -A`/`.`), and
+never force-push or amend to rewrite history; use new commits for fixes.
 
 ### Deviation protocol
 
