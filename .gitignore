@@ -1,0 +1,24 @@
+# Personal memory/history — keep local only
+.remember/
+
+# Local Claude Code project settings & telemetry
+.claude/
+
+# MLflow local tracking
+mlruns/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Python bytecode (if any scripts)
+__pycache__/
+*.pyc
+*.pyo
+
+# Local skill state (path→UUID map)
+cache/
