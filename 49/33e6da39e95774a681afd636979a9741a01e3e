@@ -1,0 +1,20 @@
+references/implementation-mode.md
+  s_e6731778a0b7df::t_1f4c40b0ecb905 45-47
+  s_e6731778a0b7df::t_6917667875c62f 20-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "4933e6da39e95774a681afd636979a9741a01e3e",
+  "prompts": {},
+  "sessions": {
+    "s_e6731778a0b7df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "64ece070-9d0d-43f6-b647-bac7109beb94",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "sayed <sayed.ahmed@nextory.com>"
+    }
+  }
+}
