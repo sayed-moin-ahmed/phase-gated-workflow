@@ -1,0 +1,30 @@
+references/validation-mode.md
+  s_a0fe1a70eb5f2e::t_2324df149f278b 47-64
+  s_a0fe1a70eb5f2e::t_747a822b6cba25 88-106,112-115
+references/research-mode.md
+  s_dae833112fb929::t_ca30f385c362b3 86-91
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "0c53b315989a44c7f76d461289c99fdb5be504df",
+  "prompts": {},
+  "sessions": {
+    "s_a0fe1a70eb5f2e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fd8412b0-fb52-4fae-ab08-c3ef592a61a9",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "sayed <sayed.moin.85@gmail.com>"
+    },
+    "s_dae833112fb929": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "807c83ec-c4e4-49c0-9d81-154c1572ecbe",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "sayed <sayed.moin.85@gmail.com>"
+    }
+  }
+}
