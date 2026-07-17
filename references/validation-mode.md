@@ -44,6 +44,24 @@ handled gracefully rather than assumed.
 Where relevant: performance against the stated budget, security of the change,
 backward compatibility, and absence of regressions.
 
+### Validation toolbox — pick the smallest sufficient set for the change
+
+Run the *smallest* validation that produces real evidence for *this* change; not
+every row applies. Choose from:
+
+- **Code:** unit tests, integration tests, contract tests, smoke tests.
+- **Quality gates:** build, compile, type check, lint, static analysis.
+- **Infrastructure:** `terraform validate` / `terraform plan`, `helm lint`,
+  `kubectl --dry-run`.
+- **Database:** migration up/down verification, `EXPLAIN ANALYZE` on changed
+  queries, rollback verification.
+- **API:** `curl` the endpoint, OpenAPI/schema validation, contract verification.
+- **Performance:** benchmarks, profiling, load testing against the stated budget.
+
+If a validation fails: analyze → fix → re-run, and repeat until the result is a
+clean **PASS** or a genuine **BLOCKED**. Don't stop at the first red and call it
+done.
+
 ### Report honestly
 
 State what was run, what was observed, what passed, and what failed. No glossing —
@@ -67,14 +85,31 @@ Produce, in this order:
 1. **Verification Plan** (scenarios exercised)
 2. **Execution Log & Observed Behavior** (with evidence)
 3. **Edge / Failure & Non-functional Results**
-4. **Pass / Fail summary** + residual issues
-5. **Recommendation:** **Done**, or **loop back** to which mode and why
+4. **Commands executed** + the relevant output for each
+5. **Final STATUS** (see the completion contract below) + residual risks and,
+   if not PASS, the recommended loop-back (which mode and why)
+
+---
+
+## Completion contract — never hand-wave the ending
+
+Do **not** end with "Done", "Looks good", or "Should work". Those are claims, not
+evidence. Close with exactly one explicit status:
+
+- **STATUS: PASS** — requires all three: validation was actually executed, the
+  required checks passed, and the evidence is presented above.
+- **STATUS: BLOCKED** — validation could *not* be run. State **why**, and give the
+  **exact commands** to run later so it can be completed unattended.
+- **STATUS: FAIL** — a check failed. State **which** checks failed, the **root
+  cause**, and the **recommended fixes** (and which earlier mode to loop back to).
+
+A change that "should" work but was never exercised is **BLOCKED**, not PASS.
 
 ---
 
 ## STOP
 
-**Workflow complete** when everything passes. If validation surfaces problems,
-recommend looping back to the appropriate earlier mode (RESEARCH for a wrong
-problem, DESIGN for a wrong shape, IMPLEMENTATION for a build bug) with the
-evidence that justifies it. If anything is unclear, stop and ask.
+**Workflow complete only on STATUS: PASS.** On BLOCKED or FAIL, recommend looping
+back to the appropriate earlier mode (RESEARCH for a wrong problem, DESIGN for a
+wrong shape, IMPLEMENTATION for a build bug) with the evidence that justifies it.
+If anything is unclear, stop and ask.

@@ -83,8 +83,12 @@ approaches* (greenfield). If it's unclear which case you're in, ask.
 
 Gather context efficiently first. If a graph/RAG retrieval tool is available
 (e.g. `graph_continue` / `auto_retrieve.py` per the project's context policy),
-use it **before** broad file reading or grepping; fall back to targeted reads
-only for the files it surfaces or that the user names.
+use it **before** broad file reading or grepping. **If it isn't in RAG** — the
+tool is unavailable, returns low confidence, or doesn't surface what you need —
+**then go to the source directly:** read the actual code, any docs/specs the
+user provided (pasted context, attached files, linked tickets), or the files the
+user names. RAG first, source-of-truth second — never guess or stall when the
+real code or a provided document can settle it.
 
 Read the relevant codebase, documentation, and specifications. Understand:
 
