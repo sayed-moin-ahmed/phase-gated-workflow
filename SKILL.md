@@ -4,16 +4,17 @@ description: >-
   Enforces a disciplined five-mode pipeline — RESEARCH → DESIGN → REVIEW →
   IMPLEMENTATION → VALIDATION — where each mode is a role-based analysis with a
   fixed deliverables set and a hard STOP-and-WAIT gate between modes, so no phase
-  begins until the user approves the previous one. Use this by DEFAULT for any
-  non-trivial engineering task — building a feature, refactoring, fixing a
-  non-obvious bug, designing or reviewing a system/architecture/data model,
-  migrations, or any multi-step change where charging straight into code risks
-  solving the wrong problem. Trigger on openings like "build", "implement",
-  "add", "refactor", "fix", "design", "review this architecture", "let's create
-  X", "help me with X". Skip only for trivial one-liners, pure factual questions,
-  or when the user explicitly opts out. Also triggers when the user says "gated
-  mode", "phase-gate this", "go mode-by-mode", "phase by phase", "research mode",
-  "design mode", "review mode", "implementation mode", or "validation mode".
+  begins until the user approves the previous one. Use this ONLY when the user
+  explicitly asks for gated, step-by-step execution, or when an already-agreed
+  multi-file change (feature, refactor, migration) must be executed with hard
+  approval checkpoints between phases. Trigger on explicit gate language: "gated
+  mode", "phase-gate this", "go mode-by-mode", "phase by phase", "stop between
+  phases", "research mode", "design mode", "review mode", "implementation mode",
+  "validation mode". Do NOT trigger on bare task openings ("build", "implement",
+  "add", "refactor", "fix", "help me with X") — open-ended feature ideation
+  belongs to superpowers:brainstorming, and architecture artifacts (ADR, C4,
+  Well-Architected review) belong to architect-pipeline. This skill is the
+  EXECUTION gate, not the entry point.
 ---
 
 # Phase-Gated Workflow
