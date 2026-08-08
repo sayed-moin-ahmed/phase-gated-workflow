@@ -91,8 +91,8 @@ and is loaded when that mode begins (progressive disclosure).
 
 ## Companion skills
 
-- [`triangulate`](https://github.com/sayed-moin-ahmed) — cross-model adversarial
-  critique (codex + Antigravity) used by REVIEW mode.
+- `triangulate` — cross-model adversarial critique (codex + Antigravity) used
+  by REVIEW mode.
 - `/verify` — end-to-end behavior-check discipline used by VALIDATION mode.
 
 Both degrade gracefully if unavailable; each mode states which path it took.
