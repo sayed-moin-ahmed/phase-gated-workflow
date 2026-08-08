@@ -1,0 +1,29 @@
+references/validation-mode.md
+  s_8d0d7ae5d772e4::t_c5688046919385 61-62
+  s_8d0d7ae5d772e4::t_7b389fe412f09c 63-64
+  s_8d0d7ae5d772e4::t_0359f0ba0c493c 27-30
+  s_8d0d7ae5d772e4::t_4df726473ccd4f 100,104-105
+  s_8d0d7ae5d772e4::t_0a46585bc084c2 70-79
+references/design-mode.md
+  s_8d0d7ae5d772e4::t_af7f607dd1d072 31-34,41
+  s_8d0d7ae5d772e4::t_db0376aa714849 35-40
+  s_8d0d7ae5d772e4::t_248407e3524d6a 99-106
+SKILL.md
+  s_8d0d7ae5d772e4::t_b6f38eed462ee1 91
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "6eefb680f8ecc620f0f0511dba86434323577744",
+  "prompts": {},
+  "sessions": {
+    "s_8d0d7ae5d772e4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bf865fbf-0042-4419-bd1c-627a70986b22",
+        "model": "claude-fable-5"
+      },
+      "human_author": "sayed <sayed.moin.85@gmail.com>"
+    }
+  }
+}
