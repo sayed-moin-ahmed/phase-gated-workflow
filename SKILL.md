@@ -88,7 +88,7 @@ Read the matching file when you enter the mode.
 | # | Mode | Role you adopt | Reference file | Produces |
 |---|------|----------------|----------------|----------|
 | 1 | **RESEARCH** | Principal Architect + Architecture Review Board | `references/research-mode.md` | Multi-perspective analysis, alternatives, risks, open questions — **no solution chosen, no code** |
-| 2 | **DESIGN** | Solution / Principal Architect (design authority) | `references/design-mode.md` | Concrete buildable design, contracts described, rollout plan — **no code** |
+| 2 | **DESIGN** | Solution / Principal Architect (design authority) | `references/design-mode.md` | Concrete buildable design, contracts described, testable acceptance criteria, rollout plan — **no code** |
 | 3 | **REVIEW** | Adversarial Review Board / Red Team | `references/review-mode.md` | Go/No-Go verdict + ranked required changes (uses `triangulate`) |
 | 4 | **IMPLEMENTATION** | Senior Implementation Engineer | `references/implementation-mode.md` | The diff, mapped to the approved design — **exactly what was approved** |
 | 5 | **VALIDATION** | QA / Verification Engineer + SRE | `references/validation-mode.md` | Empirical validation report (uses `/verify`) |

@@ -24,9 +24,10 @@ sufficient; drive the actual affected flow.
 
 ### Verification Plan
 
-List the concrete flows and scenarios to exercise, derived from the design's goals
-and the REVIEW findings (especially the flagged edge cases and failure modes).
-Include the scenario that proves the *original problem* is actually solved.
+List the concrete flows and scenarios to exercise, derived from the design's
+**acceptance criteria**, its goals, and the REVIEW findings (especially the
+flagged edge cases and failure modes). Every acceptance criterion gets a check;
+include the scenario that proves the *original problem* is actually solved.
 
 ### Execute & Observe
 
@@ -57,10 +58,24 @@ every row applies. Choose from:
   queries, rollback verification.
 - **API:** `curl` the endpoint, OpenAPI/schema validation, contract verification.
 - **Performance:** benchmarks, profiling, load testing against the stated budget.
+- **CI/CD:** when the change touches the pipeline or adds build/test steps,
+  inspect the CI configuration and reproduce the important CI checks locally
+  (same lint/test/build invocations) — local green is not CI green. An
+  authoritative check that could not be run at all is **BLOCKED**, not PASS.
 
 If a validation fails: analyze → fix → re-run, and repeat until the result is a
 clean **PASS** or a genuine **BLOCKED**. Don't stop at the first red and call it
 done.
+
+### Trajectory review — audit the path, not just the diff
+
+Before the final status, step back and review how the work got here, not only
+what it produced. Was the *actual* problem solved, or a nearby one? Did an
+unexamined assumption slip in during an earlier mode and survive into the code?
+Were files touched that the design never called for? Is there a clearly simpler
+implementation that was missed? A defect in the path — say, an assumption made
+in DESIGN that nothing ever validated — is a finding like any other, reported
+with the loop-back it implies.
 
 ### Report honestly
 
@@ -82,11 +97,12 @@ it inside validation.
 
 Produce, in this order:
 
-1. **Verification Plan** (scenarios exercised)
+1. **Verification Plan** (scenarios exercised, mapped to acceptance criteria)
 2. **Execution Log & Observed Behavior** (with evidence)
 3. **Edge / Failure & Non-functional Results**
 4. **Commands executed** + the relevant output for each
-5. **Final STATUS** (see the completion contract below) + residual risks and,
+5. **Trajectory Review notes** (path defects, or "none found")
+6. **Final STATUS** (see the completion contract below) + residual risks and,
    if not PASS, the recommended loop-back (which mode and why)
 
 ---

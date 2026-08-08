@@ -28,6 +28,17 @@ State what this design must achieve (functional + quality attributes) and,
 explicitly, what it will **not** do. The non-goals are the scope fence that keeps
 implementation honest later.
 
+### Acceptance Criteria
+
+Write the testable definition of done — a handful of concrete criteria phrased so
+VALIDATION can later check each one mechanically ("X returns Y within Z ms",
+"migration is reversible", "old clients keep working"). Number them (**AC-1,
+AC-2, …**) so later modes can reference each one precisely, and if a criterion
+changes after approval, call it out — its old verification mapping is void.
+Include the required **failure behavior**: what the system must do when each
+dependency fails. If a criterion can't be phrased testably, the requirement
+underneath it is still ambiguous — stop and ask rather than design around it.
+
 ### Selected Approach
 
 Restate the approved direction from RESEARCH and why it was chosen. If RESEARCH
@@ -85,13 +96,14 @@ Signatures, pseudocode, and schema sketches are fine — but only as a way to
 Produce, in this order:
 
 1. **Design Overview** (goals / non-goals / chosen approach)
-2. **Component & Responsibility Breakdown**
-3. **Data Model & Contracts** (described)
-4. **Execution Flow & Sequences**
-5. **Edge-Case & Failure Matrix**
-6. **Cross-Cutting Concerns**
-7. **Rollout / Migration & Rollback Plan**
-8. **Trade-offs, Complexity & Open Design Questions**
+2. **Acceptance Criteria** (testable, incl. failure behavior)
+3. **Component & Responsibility Breakdown**
+4. **Data Model & Contracts** (described)
+5. **Execution Flow & Sequences**
+6. **Edge-Case & Failure Matrix**
+7. **Cross-Cutting Concerns**
+8. **Rollout / Migration & Rollback Plan**
+9. **Trade-offs, Complexity & Open Design Questions**
 
 ---
 
