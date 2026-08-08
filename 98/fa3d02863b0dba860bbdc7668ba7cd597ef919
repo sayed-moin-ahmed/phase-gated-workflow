@@ -1,0 +1,19 @@
+README.md
+  s_8d0d7ae5d772e4::t_d9f7359c44d52d 1-98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "98fa3d02863b0dba860bbdc7668ba7cd597ef919",
+  "prompts": {},
+  "sessions": {
+    "s_8d0d7ae5d772e4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bf865fbf-0042-4419-bd1c-627a70986b22",
+        "model": "claude-fable-5"
+      },
+      "human_author": "sayed <sayed.moin.85@gmail.com>"
+    }
+  }
+}
